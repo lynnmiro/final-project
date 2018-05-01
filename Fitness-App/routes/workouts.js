@@ -11,18 +11,30 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  res.send("todo");
+  let workoutToCreate = new Workout(req.body);
+  workoutToCreate.save(function(err, workout){
+    res.send(workout);
+  });
 });
 
 router.get('/:id', function(req, res, next) {
-  res.send(req.params["id"])
+  Workout.findOne({_id: req.params["id"]}, function(err, workout){
+    if (err) return next(err);
+    res.send(workout);
+  });
 });
 
 router.put('/:id', function(req, res, next) {
-  res.send(req.params["id"])
+  Workout.findOneAndUpdate({_id: req.params["id"]}, req.body, function(err, workout) {
+    if (err) return next(err);
+    res.status(204).send();
+  });
 });
 
 router.delete('/:id', function(req, res, next) {
-  res.send(req.params["id"])
+  Workout.deleteOne({_id: req.params["id"]}, function(err, workout) {
+    if (err) return next(err);
+    res.status(204).send();
+  });
 });
 module.exports = router;
