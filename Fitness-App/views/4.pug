@@ -1,0 +1,144 @@
+html
+html(lang='en')
+  head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    // Bootstrap CSS
+    // Latest compiled and minified CSS
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    title Features
+    style.
+      .row.content {height: 450px}
+      footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+      }
+      #image {
+      background:url("Healthy-Lifestyle.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      }
+      .jumbotron {
+      color: white;
+      }
+      /* On small screens, set height to 'auto' for sidenav and grid */
+      @media screen and (max-width: 767px) {
+      .sidenav {
+      height: auto;
+      padding: 15px;
+      }
+      .row.content {height:auto;}
+      }
+      h2 {
+      color: LIGHTCORAL;
+      margin-left: 40px;
+      text-align: center;
+      }
+      h3 {
+      color: LIGHTCORAL;
+      /* margin-left: 40px;
+      text-align: left; */
+      }
+      input {
+      text-align: center;
+      width: 20%;
+      text-align: center;
+      }
+      #title  {
+      color: LIGHTCORAL;
+      margin-top: 50px;
+      margin-bottom: -140px;
+      }
+  body
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.dropdown.active
+            a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | Workout Routines
+            .dropdown-menu(role='menu', aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='#') Add Workout
+              a.dropdown-item(href='#') Update Workout
+              a.dropdown-item(href='#') Delete Workout
+          li.nav-item.active
+            a.nav-link(href='#') Rewards
+        form.form-inline.my-2.my-lg-0
+          input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search')
+          button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+    #image.jumbotron.text-center
+      h1 Healthy Habits Reminder
+      h5 How to Maintain a Healthy Lifestyle
+    .container
+      .row
+        .col-sm-4
+          h3 Drink Water
+          p
+            | Drinking water is crucial to staying healthy and maintaining the function of
+            | every system in your body, including your heart, brain, and muscles
+          p
+            | Fluids carry nutrients to your cells, flush bacteria from your bladder, and prevent constipation.
+        .col-sm-4
+          h3 Exercise
+          p
+            | Exercise can help keep your body at a healthy weight. Exercise helps people
+            | lose weight and lower the risk of some diseases
+          p
+            | Exercising regularly decreases a person's risk of developing certain diseases,
+            | including obesity, type 2 diabetes, and high blood pressure.
+        .col-sm-4
+          h3 Sleep Right
+          p
+            | Sleep plays an important role in your physical health as sleep is involved in
+            | healing and repair of your heart and blood vessels
+          p
+            | Ongoing sleep deficiency is linked to an increased risk of heart disease,
+            | kidney disease, high blood pressure, diabetes, and stroke.
+    .container-fluid
+      .row.content
+        // <div class="col-sm-8">
+        h3#title.container.raw Let's Track Your Daily Healthy Lifestyle
+        .container.raw
+          .form-check
+            input#defaultCheck1.form-check-input(type='checkbox', value='')
+            label.form-check-label(for='defaultCheck1')
+              | Did you sleep a minimum of eight hours?
+          .form-check
+            input#defaultCheck1.form-check-input(type='checkbox', value='')
+            label.form-check-label(for='defaultCheck1')
+              | Did you workout?
+          .form-check
+            input#defaultCheck1.form-check-input(type='checkbox', value='')
+            label.form-check-label(for='defaultCheck1')
+              | Did you drink enough water (seven glasses)?
+          .form-check
+            input#defaultCheck1.form-check-input(type='checkbox', value='')
+            label.form-check-label(for='defaultCheck1')
+              | Did you eat fruit or veggie at every meal?
+          .form-check
+            input#defaultCheck1.form-check-input(type='checkbox', value='')
+            label.form-check-label(for='defaultCheck1')
+              | Did you meditate in the morning?
+          .form-check
+            input#defaultCheck1.form-check-input(type='checkbox', value='')
+            label.form-check-label(for='defaultCheck1')
+              | Did you spend two hours of no phone before bed?
+          hr
+          div
+            input.btn.btn-primary.left.btn-md(type='submit', value='Submit')
+    footer.container-fluid.text-center
+      p Your Progress Points
+      .container
+        .progress
+          .progress-bar.progress-bar-info(role='progressbar', aria-valuenow='70', aria-valuemin='0', aria-valuemax='100', style='width:70%')
+            span.sr-only 70% Complete
+    // Optional JavaScript
+    // jQuery first, then Popper.js, then Bootstrap JS
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
