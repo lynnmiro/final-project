@@ -16,6 +16,7 @@ var workouts = require('./routes/workouts');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // view engine setup
 app.set('view engine', 'pug');
@@ -32,6 +33,13 @@ app.get('/', function (req, res) {
   res.render('index')
   
 })
+app.get('/home', function (req, res) {
+  res.render('home');
+});
+
+app.get('/workout/new', function (req, res) {
+  res.render('workoutform');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
