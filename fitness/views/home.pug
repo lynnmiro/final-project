@@ -1,4 +1,4 @@
-html
+doctype html
 html(lang='en')
   head
     // Required meta tags
@@ -16,8 +16,7 @@ html(lang='en')
       color: white;
       padding: 15px;
       }
-      #image {
-      background:url("Healthy-Lifestyle.jpg");
+      .logo {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -63,7 +62,7 @@ html(lang='en')
             a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
               | Workout Routines
             .dropdown-menu(role='menu', aria-labelledby='navbarDropdown')
-              a.dropdown-item(href='./workout/new') Add Workout
+              a.dropdown-item(href='/workout/new') Add Workout
               a.dropdown-item(href='#') Update Workout
               a.dropdown-item(href='#') Delete Workout
           li.nav-item.active
@@ -71,7 +70,8 @@ html(lang='en')
         form.form-inline.my-2.my-lg-0
           input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search')
           button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
-    #image.jumbotron.text-center
+    .jumbotron.text-center
+      img.logo(src='/images/Healthy-Lifestyle.jpg', alt='My_Logo')
       h1 Healthy Habits Reminder
       h5 How to Maintain a Healthy Lifestyle
     .container
@@ -84,7 +84,7 @@ html(lang='en')
           p
             | Fluids carry nutrients to your cells, flush bacteria from your bladder, and prevent constipation.
         .col-sm-4
-          h3 Exercise
+          h3 Excerise
           p
             | Exercise can help keep your body at a healthy weight. Exercise helps people
             | lose weight and lower the risk of some diseases
