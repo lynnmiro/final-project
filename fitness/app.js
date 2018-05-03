@@ -12,6 +12,8 @@ var pug = require('pug');
 
 // var indexRouter = require('./routes/index');
 var workouts = require('./routes/workouts');
+//var registerRoute = require("./routes/");
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -33,6 +35,14 @@ app.get('/', function (req, res) {
   res.render('index')
   
 })
+
+//app.use(registerRoute);
+//Registration Route for New Users
+app.get('/register', function (req, res) {
+  res.render('register')  
+});
+
+
 app.get('/home', function (req, res) {
   res.render('home');
 });

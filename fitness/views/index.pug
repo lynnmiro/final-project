@@ -1,44 +1,188 @@
-
-block content
 doctype html
-html.gr__getbootstrap_com(lang="en")
+html.gr__getbootstrap_com(lang='en')
   head
-    meta(charset="utf-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
-    meta(name="description" content="")
-    meta(name="author" content="")
-    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous")
-    link(rel="icon" href="../../../../favicon.ico")
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css', integrity='sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4', crossorigin='anonymous')
+    link(rel='icon', href='../../../../favicon.ico')
     title Fitness Lifestyle
     // Bootstrap core CSS
-    link(href="../../../../dist/css/bootstrap.min.css" rel="stylesheet")
+    link(href='../../../../dist/css/bootstrap.min.css', rel='stylesheet')
     // Custom styles for this template
-    link(rel="stylesheet" type="text/css" href="./style.css")
-  body.text-center(data-gr-c-s-loaded="true" style="")
+    style.
+      /*
+      * Globals
+      */
+      /* Links */
+      a,
+      a:focus,
+      a:hover {
+      color: #fff;
+      }
+      /* Custom default button */
+      .btn-secondary,
+      .btn-secondary:hover,
+      .btn-secondary:focus {
+      color: #333;
+      text-shadow: none; /* Prevent inheritance from `body` */
+      background-color: #fff;
+      border: .05rem solid #fff;
+      }
+      /*
+      * Base structure
+      */
+      html,
+      body {
+      height: 100%;
+      background-image: url(
+      "https://static1.squarespace.com/static/558f8675e4b0f567f8b6c6cc/t/55c2800ee4b0d223abdf7727/1438747516264/");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      }
+      body {
+      display: -ms-flexbox;
+      display: flex;
+      color: #f28500;
+      font-weight: bold;
+      text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+      box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+      }
+      .cover-container {
+      max-width: 42em;
+      }
+      .tagline {
+      color: #fb4f14;
+      }
+      /*
+      * Header
+      */
+      .masthead {
+      margin-bottom: 2rem;
+      }
+      .masthead-brand {
+      margin-bottom: 0;
+      }
+      .nav-masthead .nav-link {
+      padding: .25rem 0;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .5);
+      background-color: transparent;
+      border-bottom: .25rem solid transparent;
+      }
+      .nav-masthead .nav-link:hover,
+      .nav-masthead .nav-link:focus {
+      border-bottom-color: rgba(255, 255, 255, .25);
+      }
+      .nav-masthead .nav-link + .nav-link {
+      margin-left: 1rem;
+      }
+      .nav-masthead .active {
+      color: #fff;
+      border-bottom-color: #fff;
+      }
+      @media (min-width: 48em) {
+      .masthead-brand {
+      float: left;
+      }
+      .nav-masthead {
+      float: right;
+      }
+      }
+      /*
+      * Cover
+      */
+      .cover {
+      padding: 0 1.5rem;
+      }
+      .cover .btn-lg {
+      padding: .75rem 1.25rem;
+      font-weight: 700;
+      }
+      /*
+      * Footer
+      */
+      .mastfoot {
+      color: rgba(255, 255, 255, .5);
+      }
+      /*
+      * Login Modal
+      */
+      /* The Modal (background) */
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+      }
+      /* Modal Content/Box */
+      .modal-content {
+      background-color: #fefefe;
+      margin: 5px auto; /* 15% from the top and centered */
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+      }
+      /* The Close Button */
+      .close {
+      /* Position it in the top right corner outside of the modal */
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+      }
+      /* Close button on hover */
+      .close:hover,
+      .close:focus {
+      color: red;
+      cursor: pointer;
+      }
+      /* Add Zoom Animation */
+      .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+      }
+      @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)}
+      to {-webkit-transform: scale(1)}
+      }
+      @keyframes animatezoom {
+      from {transform: scale(0)}
+      to {transform: scale(1)}
+      }
+  body.text-center(data-gr-c-s-loaded='true', style='')
     .cover-container.d-flex.w-100.h-100.p-3.mx-auto.flex-column
       header.masthead.mb-auto
         .inner
           h3.masthead-brand Fit-7
           nav.nav.nav-masthead.justify-content-center
             a.nav-link.active(href='./home') Home
-            a.nav-link(href="#") Features
-            a.nav-link(href="#") Contact
-      main.inner.cover(role="main")
+      main.inner.cover(role='main')
         h1.cover-heading Fitness For The Rest of Us.
         h2.lead Have your fittest week ever using Fit 7.
         p.lead
-          a.btn.btn-lg.btn-secondary(href="login_modal.html") Sign Up
-          a.btn.btn-lg.btn-secondary(href="#") Login
+          a.btn.btn-lg.btn-secondary(href='./register') Sign Up
+          a.btn.btn-lg.btn-secondary(href='#') Login
       footer.mastfoot.mt-auto
         .inner
     //
       Bootstrap core JavaScript
       ==================================================
     // Placed at the end of the document so the pages load faster
-    script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous")
-    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous")
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js', integrity='sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js', integrity='sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm', crossorigin='anonymous')
   span._hsShareImage.hsShareImage  
-  link(rel="stylesheet" type="text/css" href="chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/css/content.css")
+  link(rel='stylesheet', type='text/css', href='chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/css/content.css')
   loom-container#lo-engage-ext-container
-    loom-shadow(data-reactroot="" classname="resolved")
+    loom-shadow(data-reactroot='', classname='resolved')
