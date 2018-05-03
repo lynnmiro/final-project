@@ -1,6 +1,6 @@
 ## Healthy LifeStyle 
 ###ITMD-562-Spring 2018
-![Healthy LifeStyle](images/healthimg.jpg "Healthy LifeStyle")
+![Healthy LifeStyle](images/healthimg.jpg)
 #### App Features 
 1- Our app has a login account for users 
 2- Friendly UI 
