@@ -1,5 +1,4 @@
 ## Healthy LifeStyle 
-###ITMD-562-Spring 2018
 ![Healthy LifeStyle](images/healthimg.jpg)
 
 
