@@ -24,12 +24,6 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
-router.put('/:id', function(req, res, next) {
-  Workout.findOneAndUpdate({_id: req.params["id"]}, req.body, function(err, workout) {
-    if (err) return next(err);
-    res.status(204).send();
-  });
-});
 
 router.delete('/:id', function(req, res, next) {
   Workout.deleteOne({_id: req.params["id"]}, function(err, workout) {

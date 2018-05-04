@@ -41,8 +41,22 @@ app.get('/home', function (req, res) {
   res.render('home');
 });
 
-app.get('/workout/new', function (req, res) {
+app.get('/workouts/new', function (req, res) {
   res.render('workoutform');
+});
+
+app.post('/workouts/new', function(req, res, next) {
+  let workoutToCreate = new Workout(req.body);
+  workoutToCreate.save(function(err, workout){
+    res.redirect('/workouts/' + workout.id);
+  });
+});
+
+app.post('/workouts/:id/delete', function (req, res) {
+  let id = req.params["id"]
+  Book.deleteOne({_id: id}, function(err, workout) {
+    res.redirect("/");
+  });
 });
 
 // catch 404 and forward to error handler

@@ -19,25 +19,21 @@ html(lang='en')
       }
   body
     .bs-example
-      form.form-horizontal
+      form(method="POST").form-horizontal
         .form-group
-          label.col-sm-3.control-label(for='inputDefault') Date
+          label.col-sm-3.control-label(for='date') Date
           .col-sm-3
-            input#inputDefault.form-control(type='text', placeholder='mm/dd/year')
-        .form-group
-          label.col-sm-3.control-label(for='inputDefault') Time
-          .col-sm-3
-            input#inputDefault.form-control(type='text', placeholder='00:00')
+            input#date.form-control(type='text', placeholder='mm/dd/year', name="date",value=workout.date)
         .form-group
           label.col-sm-3.control-label(for='inputDefault') Distance
           .col-sm-3
-            input#inputDefault.form-control(type='text', placeholder='mi')
+            input#inputDefault.form-control(type='text', placeholder='mi', value=workout.distance)
         .form-group
           label.col-sm-3.control-label(for='inputDefault') Duration
           .col-sm-3
-            input#inputDefault.form-control(type='text', placeholder='min')
+            input#inputDefault.form-control(type='text', placeholder='min', value=workout.duration)
         .form-group
           label.col-sm-3.control-label(for='inputDefault') Calories
           .col-sm-3
-            input#inputDefault.form-control(type='text', placeholder='cal')
+            input#inputDefault.form-control(type='text', placeholder='cal', value=workout.calories)
         button.btn.btn-primary.left.col-sm-2(type='submit')  Submit

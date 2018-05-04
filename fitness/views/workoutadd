@@ -1,0 +1,9 @@
+extends workoutform.pug
+
+  h1.mt-5 #{workout.date} 
+    a.btn.btn-primary(href='./' + book.id + '/delete') Delete
+  p Date: #{workout.data}
+  p Distance: #{workout.distance}
+  
+  p Duration: #{workout.duration}
+  p Calories: #{workout.calories}
