@@ -9,12 +9,15 @@
   "dependencies": {
     "bootstrap": "^4.1.1",
     "bower-json": "^0.8.1",
+    "chart.js": "^2.7.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
+    "jquery": "^3.3.1",
     "mongoose": "^5.0.17",
     "morgan": "~1.9.0",
+    "popper.js": "^1.14.3",
     "pug": "^2.0.3"
   },
   "devDependencies": {

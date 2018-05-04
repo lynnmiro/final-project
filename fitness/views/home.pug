@@ -62,7 +62,18 @@ html(lang='en')
             a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
               | Workout Routines
             .dropdown-menu(role='menu', aria-labelledby='navbarDropdown')
+<<<<<<< HEAD
               a.dropdown-item(href='/workouts/new') Add Workout
+=======
+              a.dropdown-item(href='/workout/new') Add Workout
+              a.dropdown-item(href='#') Update Workout
+              a.dropdown-item(href='#') Delete Workout
+          li.nav-item.active
+            a.nav-link(href='#') Rewards
+        form.form-inline.my-2.my-lg-0
+          input.form-control.mr-sm-2(type='search', placeholder='Graph', aria-label='Search')
+          button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Graph
+>>>>>>> 118249c0ce9bea143697c53dfe32737c660d1aee
     .jumbotron.text-center
       img.logo(src='/images/Healthy-Lifestyle.jpg', alt='My_Logo')
       h1 Healthy Habits Reminder
