@@ -1,39 +1,23 @@
-doctype html
-html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    meta(http-equiv='X-UA-Compatible', content='ie=edge')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-    title Workout Routines
-    style(type='text/css').
-      .bs-example{
-      margin: 50px;
-      }
-      body {
-      background-image: url("img_tree.gif"), url("paper.gif");
-      background-repeat: no-repeat, repeat;
-      background-color: #cccccc;
-      }
-  body
+extends layout.pug
+
+block content
+
     .bs-example
       form(method="POST").form-horizontal
         .form-group
-          label.col-sm-3.control-label(for='date') Date
+          label(for='date').col-sm-3.control-label Date
           .col-sm-3
-            input#date.form-control(type='text', placeholder='mm/dd/year', name="date",value=workout.date)
+            input#date.form-control(type='text', placeholder='mm/dd/year', name="date")
         .form-group
           label.col-sm-3.control-label(for='inputDefault') Distance
           .col-sm-3
-            input#inputDefault.form-control(type='text', placeholder='mi', value=workout.distance)
+            input#inputDefault.form-control(type='text', placeholder='mi')
         .form-group
           label.col-sm-3.control-label(for='inputDefault') Duration
           .col-sm-3
-            input#inputDefault.form-control(type='text', placeholder='min', value=workout.duration)
+            input#inputDefault.form-control(type='text', placeholder='min')
         .form-group
           label.col-sm-3.control-label(for='inputDefault') Calories
           .col-sm-3
-            input#inputDefault.form-control(type='text', placeholder='cal', value=workout.calories)
-        button.btn.btn-primary.left.col-sm-2(type='submit')  Submit
+            input#inputDefault.form-control(type='text', placeholder='cal')
+        button.btn.btn-primary.main.left.col-sm-2(type='submit')  Submit

@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 app.use(express.static('app/public'));
+let Workout= require('./models/workout');
 
 
 var pug = require('pug');
@@ -33,10 +34,14 @@ app.use(express.static(__dirname + '/static'));
 // app.use(cookieParser());
 
 // app.use('/', indexRouter);
-// app.use('/api/workouts', workouts);
+app.use('/api/workouts', workouts);
 
 app.get('/', function (req, res) {
-  res.render('index')
+  Workout.find(function (err, workouts) {
+    if (err) return console.error(err);
+    console.log(workouts);
+    res.render('index');
+  })
   
 })
 
@@ -62,12 +67,28 @@ app.post('/workouts/new', function(req, res, next) {
   });
 });
 
+app.get('/workouts/:id/update', function (req, res) {
+  let id = req.params["id"]
+  Workout.findOne({_id: id}, function(err, workout) {
+    res.render('workoutadd');
+  });
+});
+
+// app.get('/workouts/:id', function (req, res) {
+//   workout.findOne({_id: req.params["id"]}, function(err, workout) {
+//     if (err) return next(err);
+//     res.render('workoutadd');
+//   });
+// });
+
 app.post('/workouts/:id/delete', function (req, res) {
   let id = req.params["id"]
-  Book.deleteOne({_id: id}, function(err, workout) {
+  workout.deleteOne({_id: id}, function(err, workout) {
     res.redirect("/");
   });
 });
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
