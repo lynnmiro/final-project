@@ -16,9 +16,11 @@ var pug = require('pug');
 
 // var indexRouter = require('./routes/index');
 var workouts = require('./routes/workouts');
-//var registerRoute = require("./routes/");
+var registerRoute = require("./routes/register");
 
-
+//app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}))
+app.use('/', registerRoute)
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -41,16 +43,8 @@ app.get('/', function (req, res) {
     if (err) return console.error(err);
     console.log(workouts);
     res.render('index');
-  })
-  
-})
-
-//app.use(registerRoute);
-//Registration Route for New Users
-app.get('/register', function (req, res) {
-  res.render('register')  
+  })  
 });
-
 
 app.get('/home', function (req, res) {
   res.render('home');
@@ -87,8 +81,6 @@ app.post('/workouts/:id/delete', function (req, res) {
     res.redirect("/");
   });
 });
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
