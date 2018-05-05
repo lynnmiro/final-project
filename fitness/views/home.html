@@ -39,7 +39,18 @@
       .row.content {height:auto;} 
       } 
 
- 
+      h1 {
+        color:green
+      }
+      h5 {
+        color:green
+      }  
+      h6 {
+        color: LIGHTCORAL;
+        
+      }  
+        
+      
       h2 {
         color: LIGHTCORAL;
         margin-left: 40px;
@@ -65,7 +76,8 @@
         margin-top: 50px;
         margin-bottom: -140px;
     
-      }    
+      } 
+ 
     </style>    
   </head>
   <body>
@@ -121,11 +133,14 @@
           </div>
         </div>
       </div>
-      <div class="container-fluid">    
-        <div class="row content">
+      <div class="container-fluid">           
+        <div class="row content">          
           <!-- <div class="col-sm-8">  -->
-            <h3 class="container raw" id="title">Let's Track Your Daily Healthy Lifestyle</h3>
-            <div class="container raw">            
+            <h3 id="title" class="container raw">Let's Track Your Daily Healthy Lifestyle</h3>  
+            <!-- <div id="result" class="container">
+                <h1></h1>        
+            </div>                   -->
+            <div class="container">            
       
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="sleep">
@@ -163,19 +178,25 @@
                     <label class="form-check-label" for="defaultCheck1">
                       Did you spend two hours of no phone before bed?
                     </label>              
-                </div>   
+                </div>  
+                <!-- <div class="container">
+                    <h6 id="result"></h6>        
+                </div>                    -->
               <hr>
+              <div class="container">
+                  <h6 id="result"></h6>        
+              </div>                 
               <div>
                 <input id="subBtn" class="btn btn-primary left btn-md" value="Submit">
-              </div>  
+              </div>             
           </div>
         </div>
       </div>
-      
       <footer class="container-fluid text-center">      
       </footer>                  
   </div>
   <script type="text/javascript">
+		document.getElementById('subBtn').disabled = false;
 
     var a = document.getElementById('sleep');
     var b = document.getElementById('workout');
@@ -187,31 +208,55 @@
       count = 0;
       if (document.getElementById("sleep").checked===true){
         count++;
+        document.getElementById('result').innerHTML = "";
+        
       };
       if (document.getElementById("workout").checked===true){
         count++;
+        document.getElementById('result').innerHTML = "";
+        
       };
       if (document.getElementById("water").checked===true){
         count++;
+        document.getElementById('result').innerHTML = "";
+        
       };
       if (document.getElementById("med").checked===true){
         count++;
+        document.getElementById('result').innerHTML = "";
+        
       };
       if (document.getElementById("phone").checked === true){
         count++;
+        document.getElementById('result').innerHTML = "";
+        
+
       };
+      
       if (count === 1) {
-        alert('very poor!');
+        document.getElementById('result').innerHTML = "Very Poor LifeStyle, you need to improve!";
+        
+        
+        // alert('very poor!');
       }
       else if (count === 2){
-        alert('poor');
+        // document.getElementById('result').innerHTML = "";
+        
+        document.getElementById('result').innerHTML = "Poor LifeStyle, you need to improve!";
+        // document.getElementById('result').innerHTML = "";
+        
       }
       else if (count === 3){
-        alert('good');
+        document.getElementById('result').innerHTML = "Congrats, Good LifeStyle!! You are almost here!!";
+        // document.getElementById('result').innerHTML = "";
+        
       }
       else if (count>=4){
-        alert ('excellent');
+        document.getElementById('result').innerHTML = "Congrats, Excellent LifeStyle!! You are doing an amazing job";
       }
+      // document.getElementById('result').innerHTML = "";
+			document.getElementById('subBtn').disabled = true;				
+      
     }
 
 
