@@ -85,7 +85,7 @@ app.get('/workouts/:id', function (req, res) {
 app.post('/workouts/:id/delete', function (req, res) {
   let id = req.params["id"]
   workout.deleteOne({_id: id}, function(err, workout) {
-    res.redirect('/workouts/' + workout.id + '/delete');
+    res.redirect('/');
   });
 });
 

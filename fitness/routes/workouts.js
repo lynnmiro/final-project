@@ -27,10 +27,10 @@ router.get('/:id', function(req, res, next) {
 });
 
 
-// router.delete('/:id', function(req, res, next) {
-//   Workout.deleteOne({_id: req.params["id"]}, function(err, workout) {
-//     if (err) return next(err);
-//     res.status(204).send();
-//   });
-// });
+router.delete('/:id', function(req, res, next) {
+  Workout.deleteOne({_id: req.params["id"]}, function(err, workout) {
+    if (err) return next(err);
+    res.status(204).send();
+  });
+});
 module.exports = router;
