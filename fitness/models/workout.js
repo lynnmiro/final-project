@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 
 const WorkoutSchema = new mongoose.Schema({
-  date: Number,
+  type: String,
   distance: Number,
   duration: Number,
   calories: Number

@@ -52,7 +52,7 @@ describe('Workouts', () => {
     describe('POST/api/workouts', () => {
       it('it should add a new workout', (done) => {
           let expectedWorkout = new Workout({
-            date: 02/20/1991,
+            type:"running",
             distance: 20,
             duration: 40,
             calories: 200
@@ -65,7 +65,7 @@ describe('Workouts', () => {
               res.should.have.status(200);
               res.body.should.be.a('object');
               res.body.should.have.property("id");
-              res.body.should.have.property("date").eql(expectedWorkout.date);
+              res.body.should.have.property("type").eql(expectedWorkout.type);
               res.body.should.have.property("distance").eql(expectedWorkout.distance);
               res.body.should.have.property("duration").eql(expectedWorkout.duration);
               res.body.should.have.property("calories").eql(expectedWorkout.calories);
@@ -77,7 +77,7 @@ describe('Workouts', () => {
     describe('GET /api/workouts/:id', () => {
       it('it should get an existing workout', (done) => {
         let existingWorkout = new Workout({
-          date: 02/20/1991,
+          type:"running",
           distance: 20,
           duration: 40,
           calories: 200
@@ -91,7 +91,7 @@ describe('Workouts', () => {
               res.should.have.status(200);
               res.body.should.be.a('object');
               res.body.should.have.property("id");
-              res.body.should.have.property("date").eql(existingWorkout.date);
+              res.body.should.have.property("type").eql(existingWorkout.type);
               res.body.should.have.property("distance").eql(existingWorkout.distance);
               res.body.should.have.property("duration").eql(existingWorkout.duration);
               res.body.should.have.property("calories").eql(existingWorkout.calories);
