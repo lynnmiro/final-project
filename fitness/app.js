@@ -37,24 +37,20 @@ app.use(express.static(__dirname + '/static'));
 app.use('/api/workouts', workouts);
 
 app.get('/', function (req, res) {
-  Workout.find(function (err, workouts) {
-    if (err) return console.error(err);
-    console.log(workouts);
-    res.render('index');
-  })
-  
+    res.render('home');
 })
+  
 
 //app.use(registerRoute);
 //Registration Route for New Users
-app.get('/register', function (req, res) {
-  res.render('register')  
-});
+// app.get('/register', function (req, res) {
+//   res.render('register')  
+// });
 
 
-app.get('/home', function (req, res) {
-  res.render('home');
-});
+// app.get('/home', function (req, res) {
+//   res.render('home');
+// });
 
 app.get('/workouts/new', function (req, res) {
   res.render('workoutform');
@@ -67,13 +63,19 @@ app.post('/workouts/new', function(req, res, next) {
   });
 });
 
-app.get('/workouts/:id/update', function (req, res) {
+app.get('/workouts/:id', function (req, res) {
   let id = req.params["id"]
   Workout.findOne({_id: id}, function(err, workout) {
     res.render('workoutadd');
   });
 });
 
+// router.get('/:id', function(req, res, next) {
+//   Workout.findOne({_id: req.params["id"]}, function(err, workout){
+//     if (err) return next(err);
+//     res.send(workout);
+//   });
+// });
 // app.get('/workouts/:id', function (req, res) {
 //   workout.findOne({_id: req.params["id"]}, function(err, workout) {
 //     if (err) return next(err);
@@ -81,12 +83,12 @@ app.get('/workouts/:id/update', function (req, res) {
 //   });
 // });
 
-app.post('/workouts/:id/delete', function (req, res) {
-  let id = req.params["id"]
-  workout.deleteOne({_id: id}, function(err, workout) {
-    res.redirect("/");
-  });
-});
+// app.post('/workouts/:id/delete', function (req, res) {
+//   let id = req.params["id"]
+//   workout.deleteOne({_id: id}, function(err, workout) {
+//     res.redirect("/");
+//   });
+// });
 
 
 

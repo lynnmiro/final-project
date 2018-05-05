@@ -3,15 +3,17 @@ var router = express.Router();
 let mongoose = require('mongoose');
 var Workout = require('../models/workout')
 
-router.get('/', function(req, res, next) {
-  Workout.find(function (err, workouts) {
-    if (err) return console.error(err);
-    res.json(workouts);
-  })  
-});
+// router.get('/', function(req, res, next) {
+//   Workout.find(function (err, workouts) {
+//     if (err) return console.error(err);
+//     res.json(workouts);
+//   })  
+// });
 
 router.post('/', function(req, res, next) {
   let workoutToCreate = new Workout(req.body);
+  console.log(workoutToCreate)
+  console.log(req.body)
   workoutToCreate.save(function(err, workout){
     res.send(workout);
   });
@@ -25,10 +27,10 @@ router.get('/:id', function(req, res, next) {
 });
 
 
-router.delete('/:id', function(req, res, next) {
-  Workout.deleteOne({_id: req.params["id"]}, function(err, workout) {
-    if (err) return next(err);
-    res.status(204).send();
-  });
-});
+// router.delete('/:id', function(req, res, next) {
+//   Workout.deleteOne({_id: req.params["id"]}, function(err, workout) {
+//     if (err) return next(err);
+//     res.status(204).send();
+//   });
+// });
 module.exports = router;
