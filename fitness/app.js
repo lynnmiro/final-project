@@ -37,20 +37,19 @@ app.use(express.static(__dirname + '/static'));
 app.use('/api/workouts', workouts);
 
 app.get('/', function (req, res) {
-    res.render('home');
+    res.render('index');
 })
   
 
-//app.use(registerRoute);
-//Registration Route for New Users
-// app.get('/register', function (req, res) {
-//   res.render('register')  
-// });
+
+app.get('/register', function (req, res) {
+  res.render('register')  
+});
 
 
-// app.get('/home', function (req, res) {
-//   res.render('home');
-// });
+app.get('/home', function (req, res) {
+  res.render('home');
+});
 
 app.get('/workouts/new', function (req, res) {
   res.render('workoutform');
