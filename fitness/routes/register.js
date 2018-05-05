@@ -28,7 +28,7 @@ router.post('/register', function(req, res, next) {
           console.log(err);
           return res.status(500).send({error: err});
       }
-      return res.redirect('/')
+      return res.render('home')
   })
 })
 
