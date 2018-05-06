@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
     "test": "mocha"
   },
   "dependencies": {
@@ -12,7 +12,7 @@
     "chart.js": "^2.7.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "express": "~4.16.0",
+    "express": "^4.16.3",
     "http-errors": "~1.6.2",
     "jquery": "^3.3.1",
     "mongoose": "^5.0.17",

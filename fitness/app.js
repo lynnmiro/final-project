@@ -40,16 +40,12 @@ app.use('/api/workouts', workouts);
 
 app.get('/', function (req, res) {
     res.render('index');
-<<<<<<< HEAD
-  })  
-=======
 })
   
 
 
 app.get('/register', function (req, res) {
   res.render('register')  
->>>>>>> 18a07af02531846811611710ba022166e3407ae6
 });
 
 app.get('/home', function (req, res) {
