@@ -3,15 +3,17 @@ var router = express.Router();
 let mongoose = require('mongoose');
 var Workout = require('../models/workout')
 
-router.get('/', function(req, res, next) {
-  Workout.find(function (err, workouts) {
-    if (err) return console.error(err);
-    res.json(workouts);
-  })  
-});
+// router.get('/', function(req, res, next) {
+//   Workout.find(function (err, workouts) {
+//     if (err) return console.error(err);
+//     res.json(workouts);
+//   })  
+// });
 
 router.post('/', function(req, res, next) {
   let workoutToCreate = new Workout(req.body);
+  console.log(workoutToCreate)
+  console.log(req.body)
   workoutToCreate.save(function(err, workout){
     res.send(workout);
   });
