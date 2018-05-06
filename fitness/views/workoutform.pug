@@ -1,23 +1,19 @@
 extends layout.pug
 
 block content
+  h1.mt-5= title
+  form(method="POST")
+    .form-group
+      label(for='type') Type
+      input#type.form-control(type='text', placeholder='Enter your type of exercise', name="type", value=workout.type)
+    .form-group
+      label(for='distance') Distance
+      input#distance.form-control(type='text', placeholder='mi', name="distance", value=workout.distance)
+    .form-group
+      label(for='duration') Duration
+      input#duration.form-control(type='text', placeholder='min', name="duration", value=workout.duration)
+    .form-group
+      label(for='calories') Calories
+      input#calories.form-control(type='text', placeholder='cal', name="calories", value=workout.calories)      
+    button.btn.btn-primary(type='submit') Submit
 
-    .bs-example
-      form(method="POST").form-horizontal
-        .form-group
-          label(for='date').col-sm-3.control-label Type
-          .col-sm-3
-            input#date.form-control(type='text', placeholder='Enter your type of exercise', name="date")
-        .form-group
-          label.col-sm-3.control-label(for='inputDefault') Distance
-          .col-sm-3
-            input#inputDefault.form-control(type='text', placeholder='mi')
-        .form-group
-          label.col-sm-3.control-label(for='inputDefault') Duration
-          .col-sm-3
-            input#inputDefault.form-control(type='text', placeholder='min')
-        .form-group
-          label.col-sm-3.control-label(for='inputDefault') Calories
-          .col-sm-3
-            input#inputDefault.form-control(type='text', placeholder='cal')
-        button.btn.btn-primary.main.left.col-sm-2(type="submit")  Submit
