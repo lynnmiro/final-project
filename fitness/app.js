@@ -8,7 +8,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
-app.use(express.static('app/public'));
+//app.use(express.static('app/public'));
 let Workout= require('./models/workout');
 
 
@@ -30,18 +30,18 @@ app.use(express.urlencoded({ extended: false }));
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, '/public')));
-app.use(express.static(__dirname + '/static'));
+//app.use(express.static(__dirname + '/static'));
 
 
 // app.use(cookieParser());
+
 
 // app.use('/', indexRouter);
 app.use('/api/workouts', workouts);
 
 app.get('/', function (req, res) {
     res.render('index');
-})
-  
+});
 
 app.get('/register', function (req, res) {
   res.render('register')  
@@ -49,6 +49,10 @@ app.get('/register', function (req, res) {
 
 app.get('/home', function (req, res) {
   res.render('home');
+});
+
+app.get('/home/:name', function (req, res) {
+  res.render('home', {username: req.params.name});
 });
 
 app.get('/workouts/new', function (req, res) {

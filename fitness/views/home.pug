@@ -73,7 +73,7 @@ html(lang='en')
             .dropdown-menu(role='menu', aria-labelledby='navbarDropdown')
               a.dropdown-item(href='./workouts/new') Add Workout
         form.form-inline.my-2.my-lg-0
-          button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Graph
+          button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Welcome #{username}!
     .jumbotron.text-center
       img.logo(src='/images/Healthy-Lifestyle.jpg', alt='My_Logo')
       h1 Healthy Habits Reminder
@@ -173,7 +173,10 @@ html(lang='en')
       document.getElementById('result').innerHTML = "";
       };
       if (count === 1) {
-      document.getElementById('result').innerHTML = "Very Poor LifeStyle, you need to improve!";
+      document.getElementById('result').innerHTML = "<div>" +
+      "<p>Very Poor LifeStyle, you need to improve!</p>" +
+      "<img src='/images/bronze.jpg' width='200px' height='200px' />" +
+      "</div>";
       // alert('very poor!');
       }
       else if (count === 2){

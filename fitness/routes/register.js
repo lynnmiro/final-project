@@ -11,7 +11,7 @@ router.get('/register', function(req, res, next) {
 
 //Post user data to database POST /register //
 router.post('/register', function(req, res, next) {
-    console.log('post route', req.body)
+    //console.log('post route', req.body)
     var name = req.body.name;
     var username = req.body.username;
     var email = req.body.email;
@@ -22,13 +22,13 @@ router.post('/register', function(req, res, next) {
   newuser.username = username;
   newuser.email = email;
   newuser.password = password;
-  console.log('new userrr', newuser)
   newuser.save(function(err, savedUser) {
+      console.log('errrrrr?', err, 'resssssssss', savedUser)
       if(err) {
           console.log(err);
           return res.status(500).send({error: err});
       }
-      return res.render('home')
+      return res.redirect(`/home/${username}`)
   })
 })
 
