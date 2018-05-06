@@ -11,7 +11,7 @@ router.get('/register', function(req, res, next) {
 
 //Post user data to database POST /register //
 router.post('/register', function(req, res, next) {
-    console.log('got heree!!!! post route', req.body)
+    console.log('post route', req.body)
     var name = req.body.name;
     var username = req.body.username;
     var email = req.body.email;
