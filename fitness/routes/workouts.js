@@ -12,8 +12,6 @@ var Workout = require('../models/workout')
 
 router.post('/', function(req, res, next) {
   let workoutToCreate = new Workout(req.body);
-  console.log(workoutToCreate)
-  console.log(req.body)
   workoutToCreate.save(function(err, workout){
     res.send(workout);
   });

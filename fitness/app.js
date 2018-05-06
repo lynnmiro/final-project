@@ -1,7 +1,6 @@
 // var createError = require('http-errors');
 var express = require('express');
 var app = express();
-
 var path = require('path');
 // var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -10,12 +9,12 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 app.use(express.static('app/public'));
 let Workout= require('./models/workout');
-
+var workouts = require('./routes/workouts');
 
 var pug = require('pug');
 
 // var indexRouter = require('./routes/index');
-var workouts = require('./routes/workouts');
+
 var registerRoute = require("./routes/register");
 
 //app.use(bodyParser.json());
@@ -39,7 +38,15 @@ app.use(express.static(__dirname + '/static'));
 app.use('/api/workouts', workouts);
 
 app.get('/', function (req, res) {
-    res.render('index');
+  Workout.find(function (err, workouts) {
+    if (err) return console.error(err);
+    console.log(workouts);
+    res.render('index', { workouts : workouts });
+  })
+});
+
+app.get('/', function (req, res) {
+    res.render('index',{ workouts: workouts });
 })
   
 
@@ -48,11 +55,11 @@ app.get('/register', function (req, res) {
 });
 
 app.get('/home', function (req, res) {
-  res.render('home');
+  res.render('home',{ workouts: workouts });
 });
 
 app.get('/workouts/new', function (req, res) {
-  res.render('workoutform');
+  res.render('workoutform',{ title: "New Workout",workout: {} });
 });
 
 app.post('/workouts/new', function(req, res, next) {
@@ -62,12 +69,12 @@ app.post('/workouts/new', function(req, res, next) {
   });
 });
 
-app.get('/workouts/:id', function (req, res) {
-  let id = req.params["id"]
-  Workout.findOne({_id: id}, function(err, workout) {
-    res.render('workoutadd');
-  });
-});
+// app.get('/workouts/:id', function (req, res) {
+//   let id = req.params["id"]
+//   Workout.findOne({_id: id}, function(err, workout) {
+//     res.render('workoutadd', { title: workout.type, workout: workout });
+//   });
+// });
 
 // router.get('/:id', function(req, res, next) {
 //   Workout.findOne({_id: req.params["id"]}, function(err, workout){
@@ -81,6 +88,9 @@ app.get('/workouts/:id', function (req, res) {
 //     res.render('workoutadd');
 //   });
 // });
+app.get('/workouts/:id/delete', function (req, res) {
+  res.render('workoutadd',{ workouts: workouts });
+});
 
 app.post('/workouts/:id/delete', function (req, res) {
   let id = req.params["id"]
